@@ -1,0 +1,79 @@
+<html lang= "en">
+<head>
+    <meta charset="UTF-8">
+    <title>Funciones</title>
+</head>
+<body>
+        <!------Formulario------->
+        <form action="">
+            <input type="text" id="numero1">
+            <input type="text" id="numero2">
+            <input type="button" value="SUMAR" onclick="suma()">
+            <p>
+            <input type="text" id="resultado" readonly> 
+            <!-- El "readonly" es para que el campo solo sea visible, y no se pueda editar -->
+            </p>
+        </form>
+
+    <script>
+        var suma = function(){
+            var numero1 = parseFloat(document.getElementById("numero1").value);
+            var numero2 = parseFloat(document.getElementById("numero2").value);
+            // let msj= "HOla";
+            var resultado = numero1 + numero2;
+            console.log(document.getElementById("resultado"))
+            document.getElementById("resultado").value = resultado;
+            if(resultado ==5){
+                var msj =  "Holaaa Mario";
+                console.log('1 mensaje '+msj);
+            }
+            
+            console.log('2 mensaje '+msj);
+
+
+            // return resultado;
+        }
+        
+        /* function saludo() {
+            document.write("Hola buen dia tengas");
+        }
+        
+        saludo(); */
+       /* 
+        function saludo(nombre) {
+            document.write("Hola " + nombre);
+        }
+        
+        saludo("Arturo"); */
+        /* 
+        function suma(numero1, numero2) {
+            var numero1 = numero1
+            var numero2 = numero2
+        
+            return numero1 + numero2;
+        }
+
+        document.write( suma (10,45) ) */
+
+        // function numeroMaximo(valor1, Valor2){
+        //     if ( valor1 > Valor2 ){
+        //         return valor1;
+        //     } else {
+        //         return valor2;
+        //     }
+        // }
+        // numeroMaximo(10,20);
+
+        // var numeroMaximo = function(valor1,valor2){
+        //     if ( valor1 > valor2){
+        //         return valor1;
+        //     }
+        //     return valor2
+        // }
+        // document.write("El numero maximo es: " + numeroMaximo(1,7));
+        // <------------Calculadora-------------->
+
+
+    </script>
+</body>
+</html>
