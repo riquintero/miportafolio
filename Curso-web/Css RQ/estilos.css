@@ -1,0 +1,14 @@
+body {
+    background:#000000;
+    color:#fff;
+}
+/* Selector de etiqueta */
+h1,h2 {
+    color: gray
+}
+h1{
+    font-size:50px;
+}
+h2{
+    font-size:35px;
+}
