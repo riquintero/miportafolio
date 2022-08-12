@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatrizDiagonalDiferencial</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+const fs = require('fs');
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+
+let inputString = '';
+let currentLine = 0;
+
+process.stdin.on('data', function(inputStdin) {
+    inputString += inputStdin;
+});
+
+process.stdin.on('end', function() {
+    inputString = inputString.split('\n');
+
+    main();
+});
+
+function readLine() {
+    return inputString[currentLine++];
+}
+
+/*
+ * Complete the 'diagonalDifference' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts 2D_INTEGER_ARRAY arr as parameter.
+ */
+
+function diagonalDifference(arr) {
+    // Write your code here
+    var diagonalDifference=0;
+    var diagonalDifference2=0;
+
+    var suma=0;
+    var resta=0;
+    
+    var longitud = arr.length - 1;
+    
+    for(let i = 0; i < arr.length; ++i)  {
+    
+        for(let j = 0; j < arr.length; ++j) {
+            
+            if (i == j){
+                suma += arr[i][j];
+                diagonalDifference += arr[i][j];
+            } 
+            
+            if ((i + j) == longitud){
+                resta -= arr[i][j];
+                diagonalDifference -= arr[i][j];
+            }  
+ 
+        }
+    }
+
+    diagonalDifference2 = suma+resta;
+    console.log('Diferencia: ', Math.abs(diagonalDifference));
+    console.log('Diferencia2: ',Math.abs(diagonalDifference2));
+
+     //   if (!(arr[i] instanceof Array))
+    return Math.abs(diagonalDifference)
+}
+
+function main() {
+    const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
+
+    const n = parseInt(readLine().trim(), 10);
+
+    let arr = Array(n);
+
+    for (let i = 0; i < n; i++) {
+        arr[i] = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
+    }
+
+    const result = diagonalDifference(arr);
+
+    ws.write(result + '\n');
+
+    ws.end();
+}
+
+    </script>
+</body>
+</html>
