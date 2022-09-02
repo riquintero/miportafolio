@@ -8,72 +8,70 @@
 </head>
 <body>
     <script>
-        'use strict';
+'use strict';
+        const fs = require('fs');
+        process.stdin.resume();
+        process.stdin.setEncoding('utf-8');
 
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
+        let inputString = '';
+        let currentLine = 0;
 
-let inputString = '';
-let currentLine = 0;
+        process.stdin.on('data', function (inputStdin) {
+            inputString += inputStdin;
+        });
 
-process.stdin.on('data', function(inputStdin) {
-    inputString += inputStdin;
-});
+        process.stdin.on('end', function () {
+            inputString = inputString.split('\n');
 
-process.stdin.on('end', function() {
-    inputString = inputString.split('\n');
+            main();
+        });
 
-    main();
-});
-
-function readLine() {
-    return inputString[currentLine++];
-}
-
-/*
- * Complete the 'plusMinus' function below.
- *
- * The function accepts INTEGER_ARRAY arr as parameter.
- */
-
-function plusMinus(arr) {
-    // Write your code here
-    var plusMinusPositivo=0;
-    var plusMinusNegativo=0;
-    var plusMinusCero=0;
-    
-    let promedio = [];
-      
-    
-    for(let i = 0; i < arr.length; i++){
-        
-        if ( arr[i] > 0 ){
-            plusMinusPositivo++;{
-                (plusMinusPositivo / 6)
-                division1;
-            }
+        function readLine() {
+            return inputString[currentLine++];
         }
-        if ( arr[i] < 0 ){
-            plusMinusNegativo++;
-            } else  ( arr[i] == 0 )
-            plusMinusCero++;
-    
-    promedio.push(plusMinusPositivo);
-    promedio.push(plusMinusNegativo);
-    promedio.push(plusMinusCero);
-    return promedio ;   
-    }
 
+        /*
+         * Complete the 'plusMinus' function below.
+         *
+         * The function accepts INTEGER_ARRAY arr as parameter.
+         */
 
-}
+        function plusMinus(arr) {
+            // Write your code here
+            var plusMinusPositivo = 0;
+            var plusMinusNegativo = 0;
+            var plusMinusCero = 0;
 
-function main() {
-    const n = parseInt(readLine().trim(), 10);
+            for (let i = 0; i < arr.length; i++) {
 
-    const arr = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
+                if (arr[i] > 0) {
+                    plusMinusPositivo++;
+                } else if (arr[i] < 0) {
+                    plusMinusNegativo++;
+                } else if (arr[i] == 0) {
+                    plusMinusCero++;
+                }
+            }
+            // retorno en un arreglo los promedios de cada caso a evaluar
+            return [plusMinusPositivo / arr.length, plusMinusNegativo / arr.length, plusMinusCero / arr.length];
+        }
 
-    plusMinus(arr);
-}
+        function main() {
+            const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
+            const n = parseInt(readLine().trim(), 10);
+
+            const arr = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
+
+            const result = plusMinus(arr);
+
+            // ws.write(result + '\n');
+
+            for (let x = 0; x < result.length; x++) {
+                ws.write(parseFloat(result[x]).toFixed(6) + '\n');
+            }
+
+            ws.end();
+        }
     </script>
 </body>
 </html>
