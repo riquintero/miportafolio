@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclo For Impresion de escalera a la derecha</title>
+</head>
+<body>
+    <script>
+'use strict';
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+
+let inputString = '';
+let currentLine = 0;
+
+process.stdin.on('data', function(inputStdin) {
+    inputString += inputStdin;
+});
+
+process.stdin.on('end', function() {
+    inputString = inputString.split('\n');
+
+    main();
+});
+
+function readLine() {
+    return inputString[currentLine++];
+}
+
+/*
+ * Complete the 'staircase' function below.
+ *
+ * The function accepts INTEGER n as parameter.
+ */
+
+function staircase(n) {
+    // Write your code here
+    
+    for(let i = 1; i <= n; ++i){
+        let resultado = '';
+        
+        for(let j = 1; j <= n; ++j){
+            if (j <= n - i){ 
+                resultado += ' ';
+            }   else {
+            resultado += '#'
+            }       
+        }
+     console.log(resultado);
+    }
+    
+}
+
+function main() {
+    const n = parseInt(readLine().trim(), 10);
+    
+    staircase(n);
+}
+</script>
+</body>
+</html>
