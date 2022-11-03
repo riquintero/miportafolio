@@ -14,7 +14,7 @@ body
 }
 .cube
 {
- position: relative;
+ position: absolute;
  width: 300px;
  height: 300px;
  transform-style: preserve-3d;
@@ -25,7 +25,7 @@ body
 {
  0%
  {
-  transform: rotateX(-30deg) rotateY(0deg);
+  transform: rotateX(-30deg) rotateY(330deg);
  }
  100%
  {
