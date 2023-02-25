@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v3 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="Estilos.css">
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-image: url('imagenes/tapiz1.jpg');">
+			<div class="inner">
+				<form action="">
+					<h3>Registro de Usuario</h3>
+					<div class="form-group">
+						<div class="form-wrapper">
+						<label for="">Nombre:</label>
+							<div class="form-holder">
+								<input type="text" class="form-control">
+							</div>
+
+				<br>		
+              <label for="">Usuario:</label>
+							<div class="form-holder">
+								<i class="zmdi zmdi-account-o"></i>
+								<input type="text" class="form-control" required>
+							</div>
+							<br>
+              <label for="">Correo Electronico Alternativo: </label>
+							<div class="form-holder">
+								<i style="font-style: normal; font-size: 15px;">@</i>
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="form-wrapper">
+              <label for="">Apellido:</label>
+							<div class="form-holder">
+							
+								<input type="text" class="form-control">
+							</div>
+							<br>
+              <label for="">Correo Electronico:</label>
+							<div class="form-holder">
+								<i style="font-style: normal; font-size: 15px;">@</i>
+								<input type="text" class="form-control" required>
+							</div>
+							<br>
+              <label for="">Número de Telefono:</label>
+							<div class="form-holder">						
+								<input type="tel" name="Telefono" placeholder="(Código de área) Número" required maxlength="11" onkeyup="this.value=Numeros(this.value)" class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-wrapper">
+							<br>
+							<label for="">Contraseña:</label>
+							<div class="form-holder">
+								<i class="zmdi zmdi-lock-outline"></i>
+								<input type="password" class="form-control" placeholder="********">
+							</div>
+						</div>
+						<div class="form-wrapper">
+							<br>
+							<label for="">Repetir Contraseña:</label>
+							<div class="form-holder">
+								<i class="zmdi zmdi-lock-outline"></i>
+								<input type="password" class="form-control" placeholder="********">
+							</div>
+						</div>
+					</div>
+					<div class="form-contenedor">
+						<div class="form-wrapper">
+							<label for="">Empresa Relacionada:</label>
+							<div class="form-holder select">
+								<select name="" disabled id="" class="form-control">
+									<option value="novum">Novumideas</option>
+								</select>
+								
+							</div>
+						</div>
+
+					</div>
+					<div class="form-end">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"required>Acepta los terminos y condiciones
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<div class="button-holder">
+							<button>GUARDAR</button>
+						</div>
+						
+					</div>
+				</form>
+			</div>
+		</div>
+		
+	</body>
+</html>
